@@ -13,7 +13,6 @@ export default function Record() {
     const [doneRecord, setDoneRecord] = useState(false);
     const [audioLink, setAudioLink] = useState("");
     const [list, setList] = useState([])
-    const saveBtn = useRef()
 
 
     useEffect(() => {
@@ -83,14 +82,6 @@ export default function Record() {
                     cancelFunc()
                 })
 
-                const saveFunc = () => {
-                    if(audioLink){
-                        list.push(audioLink)
-                    }else{
-                        alert("Record something first!")
-                    }
-                }
-
                 saveBtn.current.addEventListener('click', () => {
                     saveFunc();
                 })
@@ -132,7 +123,7 @@ export default function Record() {
                 <br />
                 <div>
                     <a className='play-btn' ref={playBtn}>Play</a>
-                    <a className='save-btn' download={doneRecord && audioLink ? true : false} href={audioLink} ref={saveBtn}>Save</a>
+                    <a className='save-btn' download={doneRecord && audioLink ? true : false} href={audioLink} >Save</a>
                     <a className='cancel-btn' ref={cancelBtn}>Cancel</a>
                 </div>
             </div>
