@@ -85,9 +85,9 @@ export default function Record() {
 
                 const saveFunc = () => {
                     if(audioLink){
-                        alert("Record something first!")
-                    }else{
                         list.push(audioLink)
+                    }else{
+                        alert("Record something first!")
                     }
                 }
 
